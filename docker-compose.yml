@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  mitmproxy:
+    build: .
+    container_name: mitmproxy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./modify_traffic.py:/app/modify_traffic.py  # Persist the script
+      - ./mitmproxy-data:/home/mitmproxy/.mitmproxy  # Persist the CA certificate
+    restart: unless-stopped
