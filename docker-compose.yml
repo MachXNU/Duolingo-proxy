@@ -1,12 +1,12 @@
-version: "3.8"
-
 services:
   mitmproxy:
     build: .
-    container_name: mitmproxy
+    container_name: mitmproxy-duolingo
     ports:
-      - "8080:8080"
+      - "23782:8080"
     volumes:
       - ./modify_traffic.py:/app/modify_traffic.py  # Persist the script
       - ./mitmproxy-data:/home/mitmproxy/.mitmproxy  # Persist the CA certificate
     restart: unless-stopped
+    network_mode: bridge
+    command: mitmdump -s /app/modify_traffic.py --set block_global=false
