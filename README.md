@@ -1,15 +1,18 @@
-## Proxy for free unlimited hearts on Duolingo (web)
+## Proxy for free unlimited hearts on Duolingo (web + iOS)
 
-This project demonstrates how to setup a simple proxy that will intercept the web traffic from Duolingo when visited *from a web browser*, and alter it so as to enable unlimited hearts.
+This project demonstrates how to setup a simple proxy that will intercept the web traffic from Duolingo when visited *from a web browser* or *from the iOS app*, and alter it so as to enable unlimited hearts (and also lots of gems :) ).
 
-![](Images/result.png)
+<p align="center">
+  <img src="Images/result.png" height="300">
+  <img src="Images/iPhone.png" height="300">
+</p>
 
 ## Setup
 You can run this:
-- on your local machine and intercept only requests from web browsers running on this same machine
-- set it up on a remote machine and connect several devices/browsers.
+- on your local machine and intercept only requests from web browsers running on this same machine (only for the web version)
+- set it up on a remote machine and connect several devices/browsers (including the mobile version)
 
-### Getting started
+### Getting started (web version)
 1) Clone the repository and start the container
 ```
 git clone https://github.com/MachXNU/Duolingo-proxy.git
@@ -28,6 +31,13 @@ docker compose up -d
 4) **Done!** Visit [duolingo.com](https://duolingo.com) and enjoy free unlimited hearts!
 
 ![](Images/final.png)
+
+## On iOS
+You can use [Potatso](https://apps.apple.com/us/app/potatso/id1239860606), and set up your proxy credentials here.
+
+This app will route all your iPhone/iPad's traffic through your proxy using a VPN profile, which does apply to all apps, even when on mobile data.
+
+**NB:** you may need to switch languages for the app to refresh completely and the hack to appear.
 
 ## Further customizations
 - As usual, you can change the port exposed on the host machine in the `docker-compose.yml` file.
